@@ -133,7 +133,7 @@ footer {
   text-align: center;
 }
 
-@media screen and (max-width: 235em) {
+@media screen and (max-width: 59em) {
   main {
     display: flex;
     flex-direction: column;
