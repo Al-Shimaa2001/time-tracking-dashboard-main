@@ -30,7 +30,6 @@ main {
   display: grid;
   grid-template-columns: 350px 1fr;
   gap: 2em;
-
   padding: 4em;
   margin: 3em;
 }

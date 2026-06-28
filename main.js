@@ -85,14 +85,13 @@ function renderActivities(activities) {
 
 renderActivities(activityData);
 
-const dataHours;
+let dataHours;
 fetch("./data.json")
   .then((response) => {
     return response.json();
   })
   .then((data) => {
     dataHours = data;
-    console.log(dataHours);
   })
   .catch((error) => {
     console.error("خطأ في التحميل:", error);
@@ -107,11 +106,11 @@ daily.addEventListener("click", () => {
     daily.classList.remove("active");
   }, 3000);
   dataHours.forEach((e) => {
-    const matchData = activityData.find((item) => item.title === e.title);
+    const matchData = activityData.find((item) => item.title == e.title);
     if (matchData) {
       const cards = document.querySelectorAll(".time-card");
       cards.forEach((card) => {
-        const title = card.querySelector("h3").textContent;
+        const title = card.querySelector("h2").textContent;
         if (title === e.title) {
           const currentTime = card.querySelector(".current-time");
           if (currentTime) {
@@ -133,11 +132,11 @@ monthly.addEventListener("click", () => {
     monthly.classList.remove("active");
   }, 3000);
   dataHours.forEach((e) => {
-    const matchData = activityData.find((item) => item.title === e.title);
+    const matchData = activityData.find((item) => item.title == e.title);
     if (matchData) {
       const cards = document.querySelectorAll(".time-card");
       cards.forEach((card) => {
-        const title = card.querySelector("h3").textContent;
+        const title = card.querySelector("h2").textContent;
         if (title === e.title) {
           const currentTime = card.querySelector(".current-time");
           if (currentTime) {
@@ -159,11 +158,11 @@ weekly.addEventListener("click", () => {
     weekly.classList.remove("active");
   }, 3000);
   dataHours.forEach((e) => {
-    const matchData = activityData.find((item) => item.title === e.title);
+    const matchData = activityData.find((item) => item.title == e.title);
     if (matchData) {
       const cards = document.querySelectorAll(".time-card");
       cards.forEach((card) => {
-        const title = card.querySelector("h3").textContent;
+        const title = card.querySelector("h2").textContent;
         if (title === e.title) {
           const currentTime = card.querySelector(".current-time");
           if (currentTime) {
