@@ -45,7 +45,7 @@ main {
 .heading :first-child {
   border: 2px solid white;
   border-radius: 50%;
-  width: 60px;
+  width: 15em;
   margin-bottom: 2em;
 }
 .heading :nth-child(2) {
@@ -80,7 +80,7 @@ button:hover {
 }
 .active {
   color: white;
-  transition: all 1s ease-in-out;
+  transition: all 1s alternate;
 }
 .time-grid {
   display: grid;
@@ -134,7 +134,7 @@ footer {
   text-align: center;
 }
 
-@media screen and (max-width: 940px) {
+@media screen and (max-width: 235em) {
   main {
     display: flex;
     flex-direction: column;

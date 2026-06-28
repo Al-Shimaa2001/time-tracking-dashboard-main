@@ -69,7 +69,7 @@ function renderActivities(activities) {
       </div>
       <div class="card-body">
         <div class="card-title">
-          <h3>${activity.title}</h3>
+          <h2>${activity.title}</h2>
           <p class="more-btn">•••</p>
         </div>
         <div class="time-stats">
@@ -85,19 +85,17 @@ function renderActivities(activities) {
 
 renderActivities(activityData);
 
-let dataHours;
+const dataHours;
 fetch("./data.json")
   .then((response) => {
     return response.json();
   })
   .then((data) => {
-    // renderActivities(data);
     dataHours = data;
     console.log(dataHours);
   })
   .catch((error) => {
     console.error("خطأ في التحميل:", error);
-    // renderActivities(activityData);
   });
 const daily = document.querySelector("#daily");
 const weekly = document.querySelector("#weekly");
@@ -109,7 +107,7 @@ daily.addEventListener("click", () => {
     daily.classList.remove("active");
   }, 3000);
   dataHours.forEach((e) => {
-    const matchData = activityData.find((item) => item.title == e.title);
+    const matchData = activityData.find((item) => item.title === e.title);
     if (matchData) {
       const cards = document.querySelectorAll(".time-card");
       cards.forEach((card) => {
@@ -135,7 +133,7 @@ monthly.addEventListener("click", () => {
     monthly.classList.remove("active");
   }, 3000);
   dataHours.forEach((e) => {
-    const matchData = activityData.find((item) => item.title == e.title);
+    const matchData = activityData.find((item) => item.title === e.title);
     if (matchData) {
       const cards = document.querySelectorAll(".time-card");
       cards.forEach((card) => {
@@ -161,7 +159,7 @@ weekly.addEventListener("click", () => {
     weekly.classList.remove("active");
   }, 3000);
   dataHours.forEach((e) => {
-    const matchData = activityData.find((item) => item.title == e.title);
+    const matchData = activityData.find((item) => item.title === e.title);
     if (matchData) {
       const cards = document.querySelectorAll(".time-card");
       cards.forEach((card) => {
