@@ -105,6 +105,9 @@ const monthly = document.querySelector("#monthly");
 
 daily.addEventListener("click", () => {
   daily.classList.add("active");
+  setTimeout(() => {
+    daily.classList.remove("active");
+  }, 3000);
   dataHours.forEach((e) => {
     const matchData = activityData.find((item) => item.title == e.title);
     if (matchData) {
@@ -128,6 +131,9 @@ daily.addEventListener("click", () => {
 });
 monthly.addEventListener("click", () => {
   monthly.classList.add("active");
+  setTimeout(() => {
+    monthly.classList.remove("active");
+  }, 3000);
   dataHours.forEach((e) => {
     const matchData = activityData.find((item) => item.title == e.title);
     if (matchData) {
@@ -151,6 +157,9 @@ monthly.addEventListener("click", () => {
 });
 weekly.addEventListener("click", () => {
   weekly.classList.add("active");
+  setTimeout(() => {
+    weekly.classList.remove("active");
+  }, 3000);
   dataHours.forEach((e) => {
     const matchData = activityData.find((item) => item.title == e.title);
     if (matchData) {
